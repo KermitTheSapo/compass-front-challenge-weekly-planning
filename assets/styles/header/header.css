@@ -53,6 +53,7 @@ header{
     color: var(--white);
     font-weight: 400;
     font-size: 1.06rem;
+    cursor: pointer;
 }
 
 .buttons__save{
