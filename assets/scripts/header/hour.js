@@ -12,4 +12,4 @@ function fixNumber(number){
     return number;
 }
 updateTime()
-setInterval(updateTime, 1000)
+setInterval(updateTime, 10000)
