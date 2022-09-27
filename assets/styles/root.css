@@ -1,0 +1,17 @@
+:root{
+    --principal-color: #6688FF;
+    --white: #FFFFFF;
+    --btn-add: #2CBE82;
+    --btn-remove:#DA2B40;
+    --timer: #3B3E45;
+    --btn-Monday: #FFA246;
+    --btn-Tuesday: #35E185;
+    --btn-Wednesday: #6688FF;
+    --btn-Thursday: #B266FF;
+    --btn-Friday: #66D1FF;
+    --btn-Saturday: #66D1FF;
+    --btn-Sunday: #FF6666;
+    --delete: #98031E;
+    --error: #F55D5D;
+    --error-date: #F55D5D66;
+}

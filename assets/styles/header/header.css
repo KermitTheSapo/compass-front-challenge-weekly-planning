@@ -1,0 +1,81 @@
+@import url(".././root.css");
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+header{
+    height: 131px;
+    border-radius: 35px;
+    box-shadow: 0px 4px 24px 0px #A8A8A840;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.menu{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--principal-color);
+    width: 50%;
+    height: 50%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.menu__title{
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.38rem;
+    padding-left: 10px;
+}
+
+.menu__paragraph{
+    color: var(--white);
+    font-size: 0.87rem;
+    padding-left: 10px;
+}
+
+.buttons{
+    display: flex;
+    width: 33%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttons__save, .buttons__remove{
+    border: none;
+    height: 40px;
+    width: 180px;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.06rem;
+}
+
+.buttons__save{
+    background-color: var(--btn-add);
+}
+
+.buttons__remove{
+    background-color: var(--btn-remove);
+}
+
+.timer{
+    display: flex;   
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-right: 50px;
+    width: 20%;
+}
+
+.timer__hour{
+    font-size: 2.5rem;
+}
+
+.timer__date{
+    font-size: 1.25rem; 
+}
