@@ -24,8 +24,26 @@
     border-radius: 10px;
 }
 
-.calendar__hour--good{
-    background-color: var(--date-hour);
+.calendar__hour--monday{
+    background-color: var(--monday-hour);
+}
+.calendar__hour--Tuesday{
+    background-color: var(--tuesday-hour);
+}
+.calendar__hour--Thursday{
+    background-color: var(--thursday-hour);
+}
+.calendar__hour--Wednesday{
+    background-color: var(--wednesday-hour);
+}
+.calendar__hour--Friday{
+    background-color: var(--friday-hour);
+}
+.calendar__hour--Saturday{
+    background-color: var(--saturday-hour);
+}
+.calendar__hour--Sunday{
+    background-color: var(--sunday-hour);
 }
 
 .calendar__hour--error{
@@ -53,8 +71,26 @@
     border-radius: 15px 0px 0px 15px;
 }
 
-.calendar__status--good{
-    background-color: var(--principal-color);
+.calendar__status--monday{
+    background-color: var(--btn-Monday);
+}
+.calendar__status--tuesday{
+    background-color: var(--btn-Tuesday);
+}
+.calendar__status--thursday{
+    background-color: var(--btn-Thursday);
+}
+.calendar__status--wednesday{
+    background-color: var(--btn-Wednesday);
+}
+.calendar__status--friday{
+    background-color: var(--btn-Friday);
+}
+.calendar__status--saturday{
+    background-color: var(--btn-Saturday);
+}
+.calendar__status--sunday{
+    background-color: var(--btn-Sunday);
 }
 
 .calendar__status--error{

@@ -22,26 +22,14 @@
 
 .weekdays__list{    
     display: flex;
-    width:90%;
+    width:95%;
     gap: 20px;
     align-items: center;
-    overflow: auto;
-    white-space: nowrap;
-}
-
-.weekdays__list::-webkit-scrollbar{
-    background-color: var(--white);
-    height: 8px;
-}
-.weekdays__list::-webkit-scrollbar-thumb{
-    background-color: #DCDFE3;
-    border-radius: 10px;
-    height: 8px;
 }
 
 .weekdays__item{
     height: 33px;
-    min-width: 200px;
+    width: 150px;
     box-shadow: 0px 4px 24px 0px #A8A8A840;
     display: flex;
     align-items: center;
@@ -54,7 +42,7 @@
 
 .weekdays__item--on{
     height: 33px;
-    min-width: 300px;
+    width: 200px;
     box-shadow: 0px 4px 24px 0px #A8A8A840;
     display: flex;
     align-items: center;

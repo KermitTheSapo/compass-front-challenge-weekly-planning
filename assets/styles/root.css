@@ -9,10 +9,16 @@
     --btn-Wednesday: #6688FF;
     --btn-Thursday: #B266FF;
     --btn-Friday: #66D1FF;
-    --btn-Saturday: #66D1FF;
+    --btn-Saturday: #FF66D4;
     --btn-Sunday: #FF6666;
     --delete: #98031E;
     --error: #F55D5D;
     --error-date: #F55D5D66;
-    --date-hour: #6688FF66;
+    --monday-hour: #FFA24666;
+    --tuesday-hour: #35E18566;
+    --wednesday-hour: #6688FF66;
+    --thursday-hour: #B266FF66;
+    --friday-hour: #66D1FF66;
+    --saturday-hour: #FF66D466;
+    --sunday-hour: #FF666666;    
 }
