@@ -63,3 +63,7 @@ main{
     width: 184px;    
     background-color: var(--btn-remove);    
 }
+
+.disable{
+    display: none;
+}

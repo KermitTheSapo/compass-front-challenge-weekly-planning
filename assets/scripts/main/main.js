@@ -5,9 +5,12 @@ const add = document.querySelector(".add__btn")
 const remove = document.querySelector(".add__remove")
 const calendar = document.querySelector(".calendar")
 const deleteDiv = document.querySelector(".calendar__remove")
+const deleteAll = document.querySelector(".add__remove")
 
 add.addEventListener("click", () => {
-    addCalendar()
+    if (content.value.length > 5 && hour.value.length > 2){
+        addCalendar()
+    }
     cleanInput()
 })
 
@@ -17,6 +20,8 @@ function cleanInput() {
     hour.value = ""
 }
 function addCalendar(){
+    calendar.classList.add("calendar")
+    calendar.classList.remove("disable")
     var name = content.value
     var weekdays = week.value
     var time = hour.value   
@@ -47,8 +52,19 @@ function addCalendar(){
     var h3Text = document.createElement("h3")
     h3Text.classList.add("calendar__text")
     divContent.appendChild(h3Text)
-    h3Text.textContent = name    
+    h3Text.textContent = name   
+    
+    var btn = document.createElement("button")
+    btn.classList.add("calendar__remove")
+    divContent.appendChild(btn)
+    btn.innerHTML = "Apagar"
 }
+
+deleteAll.addEventListener("click", () => {
+    calendar.classList.add("disable")
+    calendar.classList.remove("calendar")
+    
+})
 
 // deleteDiv.addEventListener("click", () =>{
 //     divContent.classList.add("remove")
