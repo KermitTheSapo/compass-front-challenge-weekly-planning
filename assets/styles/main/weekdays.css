@@ -17,12 +17,12 @@
 }
 
 .weekdays__days{
-    width: 100%;
+    width: 95%;
 }
 
-.weekdays__list{
+.weekdays__list{    
     display: flex;
-    width:1000px;
+    width:90%;
     gap: 20px;
     align-items: center;
     overflow: auto;
@@ -41,7 +41,7 @@
 
 .weekdays__item{
     height: 33px;
-    min-width: 150px;
+    min-width: 200px;
     box-shadow: 0px 4px 24px 0px #A8A8A840;
     display: flex;
     align-items: center;

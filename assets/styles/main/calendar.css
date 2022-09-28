@@ -1,0 +1,80 @@
+@import url("../root.css");
+
+.calendar{
+    padding-left: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 20px;
+    flex-direction: column;
+}
+.calendar__item{
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 10px;
+}
+
+.calendar__hour{
+    height: 85px;
+    width: 85px;
+    display: flex;
+    justify-content: space-evenly;  
+    align-items: center;
+    border-radius: 10px;
+}
+
+.calendar__hour--good{
+    background-color: var(--date-hour);
+}
+
+.calendar__hour--error{
+    background-color: var(--error-date);    
+}
+
+/* .calendar__time{
+
+} */
+
+.calendar__content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(112.83deg, rgba(228, 240, 248, 0.42) 0%, rgba(255, 255, 255, 0.336) 110.84%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    width: 512px;
+    box-shadow: 0px 1.9999998807907104px 5.499999523162842px 0px #00000005;
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+.calendar__status{
+    width: 14px;
+    height: 85px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.calendar__status--good{
+    background-color: var(--principal-color);
+}
+
+.calendar__status--error{
+    background-color: var(--error);
+}
+
+.calendar__text{
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.calendar__remove{
+    height: 25px;
+    width: 57px;
+    background-color: var(--delete);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    position: relative;
+    bottom: 20px;
+    left: 310px;
+}

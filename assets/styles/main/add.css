@@ -1,0 +1,65 @@
+@import url("../root.css");
+
+/* body{
+    background-image: url("../../imgs/main/compass-logo.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+} */
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 44px;
+}
+
+.add__name{
+    width: 424px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--white);
+    border: 1px var(--btn-add) solid;
+}
+
+.add__weekdays{
+    height: 100%;
+    width: 210px;
+    border-radius: 10px;
+    border: 1px var(--btn-add) solid;
+}
+
+/* .add__days{
+
+} */
+
+.add__hour{
+    height: 100%;
+    width: 102px;
+    border-radius: 10px;
+    border: 1px var(--btn-add) solid;
+}
+
+.add__btn, .add__remove{
+    height: 100%;
+    border-radius: 10px;
+    border: transparent;
+    font-size: 1.063rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.add__btn{
+    width: 222px;
+    background-color: var(--btn-add);
+}
+
+.add__remove{
+    width: 184px;    
+    background-color: var(--btn-remove);    
+}

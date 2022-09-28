@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./assets/styles/root.css">
     <link rel="stylesheet" href="./assets/styles/header/header.css">
     <link rel="stylesheet" href="./assets/styles/main/weekdays.css">
+    <link rel="stylesheet" href="./assets/styles/main/add.css">
+    <link rel="stylesheet" href="./assets/styles/main/calendar.css">
     <title>Planejamento Semanal</title>
 </head>
 <body>
@@ -29,6 +31,21 @@
         </div>
     </header>
     <main>
+        <section class="add">
+            <input type="text" placeholder="Atividade" class="add__name">
+            <select name="weekdays" id="week" class="add__weekdays">
+                <option value="segunda" class="add__days">Segunda-Feira</option>
+                <option value="terca" class="add__days">Terça-Feira</option>
+                <option value="quarta" class="add__days">Quarta-Feira</option>
+                <option value="quinta" class="add__days">Quinta-Feira</option>
+                <option value="sexta" class="add__days">Sexta-Feria</option>
+                <option value="sabado" class="add__days">Sábado</option>
+                <option value="domingo" class="add__days">Domingo</option>
+            </select>
+            <input type="number" placeholder="10:58" class="add__hour">
+            <button class="add__btn">+ Adicionar Atividade</button>
+            <button class="add__remove">- Excluir Todos</button>
+        </section>
         <section class="weekdays">
             <div class="weekdays__hour">
                 <h3>Horário</h3>
@@ -44,6 +61,18 @@
                     <li class="weekdays__item Sunday">Domingo</li>
                 </ul>
             </nav>
+        </section>
+        <section class="calendar">
+            <div class="calendar__item">
+                <div class="calendar__hour calendar__hour--good">
+                    <h4 class="calendar__time">10h30m</h4>
+                </div>
+                <div class="calendar__content">
+                    <div class="calendar__status calendar__status--good"></div>
+                    <h3 class="calendar__text">exemplo<h3>
+                    <button class="calendar__remove">Apagar</button>
+                </div>
+            </div>
         </section>
     </main>
     <script src="./assets/scripts/header/hour.js"></script>
