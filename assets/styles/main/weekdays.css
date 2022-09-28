@@ -1,0 +1,80 @@
+@import url("../root.css");
+
+.weekdays{
+    display: flex;
+    align-items: center;
+}
+
+.weekdays__hour{
+    height: 75px;
+    width: 85px;
+    border-radius: 10px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 24px 0px #A8A8A840;
+}
+
+.weekdays__days{
+    width: 100%;
+}
+
+.weekdays__list{
+    display: flex;
+    width:1000px;
+    gap: 20px;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.weekdays__list::-webkit-scrollbar{
+    background-color: var(--white);
+    height: 8px;
+}
+.weekdays__list::-webkit-scrollbar-thumb{
+    background-color: #DCDFE3;
+    border-radius: 10px;
+    height: 8px;
+}
+
+.weekdays__item{
+    height: 33px;
+    min-width: 150px;
+    box-shadow: 0px 4px 24px 0px #A8A8A840;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+    color: var(--white);
+    font-size: 1.063rem;
+    font-weight: 700;
+}
+
+.weekdays__item:hover{
+    width: 190px;
+    transition: 0.5s;
+}
+
+.Monday{
+    background-color: var(--btn-Monday);
+}
+.Tuesday{
+    background-color: var(--btn-Tuesday);
+}
+.Thursday{
+    background-color: var(--btn-Thursday);
+}
+.Wednesday{
+    background-color: var(--btn-Wednesday);
+}
+.Friday{
+    background-color: var(--btn-Friday);
+}
+.Saturday{
+    background-color: var(--btn-Saturday);
+}
+.Sunday{
+    background-color: var(--btn-Sunday);
+}
