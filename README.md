@@ -45,13 +45,13 @@ A weekly planning website, which adds activities on selected day and time, exclu
 
 ## Features
 
-- [ ] header
-    - [ ] save and delete local Storage
+- [X] header
+    - [X] save and delete local Storage
     - [X] timer
 - [ ] main
     - [X] add activities menu
     - [X] weeks menu
-    - [ ] time column
+    - [X] time column
     - [X] activity column
     - [X] delete activities
     - [ ] when you have two activities a line appears
