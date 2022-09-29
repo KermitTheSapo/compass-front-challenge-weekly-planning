@@ -11,7 +11,6 @@ const calendarWednesday = document.querySelector(".calendar__wednesday")
 const calendarFriday = document.querySelector(".calendar__friday")
 const calendarSaturday = document.querySelector(".calendar__saturday")
 const calendarSunday = document.querySelector(".calendar__sunday")
-const deleteDiv = document.querySelector(".calendar__remove")
 const deleteAll = document.querySelector(".add__remove")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []

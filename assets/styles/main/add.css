@@ -4,7 +4,7 @@ body{
     background-image: url("../../imgs/main/compass-logo.png");
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-color: #E5E5E5;
+    background-color: var(--background);
 }
 
 main{
@@ -24,27 +24,28 @@ main{
     width: 324px;
     height: 100%;
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: var(--background);
     border: 1px var(--btn-add) solid;
     padding-left: 100px;
     text-align: start;
+}
+.add__name::placeholder{
+    color: #3B3E45;
 }
 .add__weekdays{
     height: 100%;
     width: 210px;
     border-radius: 10px;
     border: 1px var(--btn-add) solid;
+    background-color: var(--background);
 }
-
-/* .add__days{
-
-} */
 
 .add__hour{
     height: 100%;
     width: 102px;
     border-radius: 10px;
     border: 1px var(--btn-add) solid;
+    background-color: var(--background);
 }
 
 .add__btn, .add__remove{
