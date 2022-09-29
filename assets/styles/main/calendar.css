@@ -72,10 +72,6 @@
     background-color: var(--error-date);    
 }
 
-/* .calendar__time{
-
-} */
-
 .calendar__content{
     display: flex;
     align-items: center;
