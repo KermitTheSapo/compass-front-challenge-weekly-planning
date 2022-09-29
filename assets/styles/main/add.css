@@ -1,10 +1,11 @@
 @import url("../root.css");
 
-/* body{
+body{
     background-image: url("../../imgs/main/compass-logo.png");
     background-repeat: no-repeat;
     background-position: bottom right;
-} */
+    background-color: #E5E5E5;
+}
 
 main{
     display: flex;

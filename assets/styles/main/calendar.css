@@ -1,17 +1,39 @@
 @import url("../root.css");
 
 .calendar{
+    width: 98%;
     padding-left: 10px;
     display: flex;
     align-items: flex-start;
     justify-content: start;
     gap: 20px;
     flex-direction: column;
+    height: 68vh;
+    max-height: 68vh;
+    overflow: scroll; 
+    transform: rotateX(180deg);
+    overflow-x: auto;
 }
+.calendar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.calendar::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+.calendar::-webkit-scrollbar-thumb {
+    background-color: #DCDFE3;
+    border-radius: 20px;
+    border: 3px solid #DCDFE3;
+    width: 8px;
+}
+
 .calendar__item{
     display: flex;
     align-items: flex-start;
     justify-content: start;
+    margin-bottom: 10px;
     gap: 10px;
 }
 
@@ -110,7 +132,14 @@
     border: none;
     border-radius: 4px;
     font-size: 0.875rem;
-    position: relative;
-    bottom: 20px;
-    left: 310px;
+    position: absolute;
+    left: 540px;
+    margin-bottom: 40px;
+}
+
+.calendar__monday, .calendar__tuesday,.calendar__thursday,.calendar__wednesday,.calendar__friday,.calendar__saturday,.calendar__sunday{
+    min-height: 90vh;
+    width: 120%;
+    transform: rotateX(180deg);
+    padding-top: 30px;
 }
