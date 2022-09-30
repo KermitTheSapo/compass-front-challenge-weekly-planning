@@ -16,7 +16,7 @@ const deleteAll = document.querySelector(".add__remove")
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
 
 add.addEventListener("click", () => {
-    if (content.value.length > 2 && hour.value.length > 2){
+    if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 80){
         addCalendar()
     }
     cleanInput()
@@ -25,7 +25,7 @@ add.addEventListener("click", () => {
 function cleanInput() {
     content.value = ""
     week.value = "Segunda-Feira"
-    hour.value = ""
+    hour.value = "12:00"
 }
 
 function showItems() {
@@ -145,7 +145,6 @@ function addCalendar(){
 
 function deleteOne(index) {
     items.splice(index, 1)
-    console.log(items)
     showItems()
 }
 
@@ -155,11 +154,47 @@ function saveFromLocalStorage() {
 
 function deleteFromLocalStorage() {
     localStorage.removeItem('calendar_itens')
+    items.splice(0, items.length);
+    showItems()
 }
 
 deleteAll.addEventListener("click", () => {
-    items.splice(0, items.length);
-    showItems()
+    if(calendarMonday.className === "calendar__monday"){
+        while (calendarMonday.firstChild) {
+            calendarMonday.removeChild(calendarMonday.firstChild);
+            items.splice(calendarMonday.firstChild, 1)
+        }
+    }else if(calendarTuesday.className === "calendar__tuesday"){
+        while (calendarTuesday.firstChild) {
+            calendarTuesday.removeChild(calendarTuesday.firstChild);
+            items.splice(calendarTuesday.firstChild, 1)
+        }
+    }else if(calendarThursday.className === "calendar__thursday"){
+        while (calendarThursday.firstChild) {
+            calendarThursday.removeChild(calendarThursday.firstChild);
+            items.splice(calendarThursday.firstChild, 1)
+        }
+    }else if(calendarWednesday.className === "calendar__wednesday"){
+        while (calendarWednesday.firstChild) {
+            calendarWednesday.removeChild(calendarWednesday.firstChild);
+            items.splice(calendarWednesday.firstChild, 1)
+        }
+    }else if(calendarFriday.className === "calendar__friday"){
+        while (calendarFriday.firstChild) {
+            calendarFriday.removeChild(calendarFriday.firstChild);
+            items.splice(calendarFriday.firstChild, 1)
+        }
+    }else if(calendarSaturday.className === "calendar__saturday"){
+        while (calendarSaturday.firstChild) {
+            calendarSaturday.removeChild(calendarSaturday.firstChild);
+            items.splice(calendarSaturday.firstChild, 1)
+        }
+    }else if(calendarSunday.className === "calendar__sunday"){
+        while (calendarSunday.firstChild) {
+            calendarSunday.removeChild(calendarSunday.firstChild);
+            items.splice(calendarSunday.firstChild, 1)
+        }
+    }
 })
 
 function order(a,b) {
