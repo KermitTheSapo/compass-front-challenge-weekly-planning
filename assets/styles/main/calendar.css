@@ -131,6 +131,7 @@
     position: absolute;
     left: 540px;
     margin-bottom: 40px;
+    cursor: pointer;
 }
 
 .calendar__monday, .calendar__tuesday,.calendar__thursday,.calendar__wednesday,.calendar__friday,.calendar__saturday,.calendar__sunday{

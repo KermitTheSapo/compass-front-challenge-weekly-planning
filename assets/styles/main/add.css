@@ -55,6 +55,7 @@ main{
     font-size: 1.063rem;
     font-weight: 400;
     color: var(--white);
+    cursor: pointer;
 }
 
 .add__btn{

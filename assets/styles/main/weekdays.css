@@ -38,6 +38,7 @@
     color: var(--white);
     font-size: 1.063rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .weekdays__item--on{
