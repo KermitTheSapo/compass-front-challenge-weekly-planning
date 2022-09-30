@@ -15,6 +15,8 @@ const deleteAll = document.querySelector(".add__remove")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
 
+calendar.scrollTo(0, 300);
+
 add.addEventListener("click", () => {
     if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 80){
         addCalendar()
