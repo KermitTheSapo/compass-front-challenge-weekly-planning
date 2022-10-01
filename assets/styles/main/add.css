@@ -20,10 +20,11 @@ main{
     height: 44px;
 }
 
+
 .add__input{
     height: 100%;
 }
-.add__error--content, .add__error--hour,.add__error--hourContent{    
+.add__error--content, .add__error--hour,.add__error--hourContent, .add__error--maxContent{    
     color: var(--error);
     display: none;
     justify-content: center;

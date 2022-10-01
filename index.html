@@ -32,11 +32,12 @@
         </div>
     </header>
     <main>
-        <section class="add">
+        <form onsubmit="" class="add">
             <div class="add__input">
                 <input type="text" placeholder="Atividade" class="add__name" autofocus>
                 <p class="add__error--content">Digite o nome da sua atividade!</p>
                 <p class="add__error--hourContent">Digite o nome e horário da sua atividade</p>
+                <p class="add__error--maxContent">Você ultrapassou o limite de caracteres!</p>
             </div>            
             <select name="weekdays" id="week" class="add__weekdays">
                 <option value="Segunda-Feira" class="add__days">Segunda-Feira</option>
@@ -53,7 +54,7 @@
             </div>            
             <button class="add__btn"><i class="plus">&#43;</i> Adicionar Atividade</button>
             <button class="add__remove"><i class="remove">&#8722;</i> Excluir Todos</button>
-        </section>
+        </form>
         <section class="weekdays">
             <div class="weekdays__hour">
                 <h3>Horário</h3>

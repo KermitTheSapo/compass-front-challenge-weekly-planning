@@ -15,18 +15,23 @@ const deleteAll = document.querySelector(".add__remove")
 const errorContent = document.querySelector(".add__error--content")
 const errorHour = document.querySelector(".add__error--hour")
 const errorHourContent = document.querySelector(".add__error--hourContent")
+const maxContent = document.querySelector(".add__error--maxContent")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
 
 calendar.scrollTo(0, 300);
 
-add.addEventListener("click", () => {
-    if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 80){
+
+
+add.addEventListener("click", (e) => {
+    e.preventDefault()
+    if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 150){
         addCalendar()
         content.classList.remove("add__name--error")
         hour.classList.remove("add__hour--error")
         errorContent.setAttribute("style", "display: none")
         errorHour.setAttribute("style", "display: none")
+        maxContent.setAttribute("style", "display: none")
     } else if(content.value.length < 2 && hour.value.length < 2){
         content.classList.add("add__name--error")
         hour.classList.add("add__hour--error")
@@ -38,6 +43,9 @@ add.addEventListener("click", () => {
     }else if(hour.value.length < 2){
         hour.classList.add("add__hour--error")
         errorHour.setAttribute("style", "display: flex")
+    } else if(content.value.length > 150){
+        content.classList.add("add__name--error")
+        maxContent.setAttribute("style", "display: flex")
     }
     cleanInput()
 })
