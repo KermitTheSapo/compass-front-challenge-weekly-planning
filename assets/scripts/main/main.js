@@ -27,6 +27,11 @@ add.addEventListener("click", () => {
         hour.classList.remove("add__hour--error")
         errorContent.setAttribute("style", "display: none")
         errorHour.setAttribute("style", "display: none")
+    } else if(content.value.length < 2 && hour.value.length < 2){
+        content.classList.add("add__name--error")
+        hour.classList.add("add__hour--error")
+        errorContent.setAttribute("style", "display: flex")
+        errorHour.setAttribute("style", "display: flex")
     } else if(content.value.length < 2){
         content.classList.add("add__name--error")
         errorContent.setAttribute("style", "display: flex")
@@ -37,12 +42,6 @@ add.addEventListener("click", () => {
     cleanInput()
 })
 
-function cleanInput() {
-    content.value = ""
-    week.value = "Segunda-Feira"
-    hour.value = "12:00"
-}
-
 function showItems() {
     calendarMonday.innerHTML = ''
     calendarTuesday.innerHTML = ''
@@ -52,18 +51,6 @@ function showItems() {
     calendarSaturday.innerHTML = ''
     calendarSunday.innerHTML = ''
     items.sort(order)
-    var array = []
-    // var veri = true
-    // var i = 0
-    // while (i < items.length){
-    //     array.push(items[i].time)
-    //     i++
-    // }
-    // veri = array.some( e => e === e)
-    // if (veri) {
-
-    // }
-
     items.forEach((item) => {
 
         var div = ""
@@ -75,14 +62,7 @@ function showItems() {
         if(item.weekdays === "Segunda-Feira"){
             createDivCalendar(calendarMonday)
             createHour("calendar__hour--monday")
-            createContent("calendar__status--monday")
-            // if(veri === true){
-            //     createContent("calendar__status--monday")    
-            //     createContent("calendar__status--monday")
-            //     array.splice(0, array.length)
-            // } else{
-            //     createContent("calendar__status--monday")
-            // }            
+            createContent("calendar__status--monday")         
         } else if(item.weekdays === "Terça-Feira"){
             createDivCalendar(calendarTuesday)
             createHour("calendar__hour--Tuesday")
@@ -161,10 +141,7 @@ function showItems() {
             createDivStatus(nameStatus)
             createContentH3()
             createBtn()
-        }
-
-        
-        
+        }        
     })
 }
 
@@ -177,60 +154,6 @@ function addCalendar(){
     items.push(item)
     showItems()
 }
-
-function deleteOne(index) {
-    items.splice(index, 1)
-    showItems()
-}
-
-function saveFromLocalStorage() {
-    localStorage.setItem('calendar_itens', JSON.stringify(items))
-}
-
-function deleteFromLocalStorage() {
-    localStorage.removeItem('calendar_itens')
-    items.splice(0, items.length);
-    showItems()
-}
-
-deleteAll.addEventListener("click", () => {
-    if(calendarMonday.className === "calendar__monday"){
-        while (calendarMonday.firstChild) {
-            calendarMonday.removeChild(calendarMonday.firstChild);
-            items.splice(calendarMonday.firstChild, 1)
-        }
-    }else if(calendarTuesday.className === "calendar__tuesday"){
-        while (calendarTuesday.firstChild) {
-            calendarTuesday.removeChild(calendarTuesday.firstChild);
-            items.splice(calendarTuesday.firstChild, 1)
-        }
-    }else if(calendarThursday.className === "calendar__thursday"){
-        while (calendarThursday.firstChild) {
-            calendarThursday.removeChild(calendarThursday.firstChild);
-            items.splice(calendarThursday.firstChild, 1)
-        }
-    }else if(calendarWednesday.className === "calendar__wednesday"){
-        while (calendarWednesday.firstChild) {
-            calendarWednesday.removeChild(calendarWednesday.firstChild);
-            items.splice(calendarWednesday.firstChild, 1)
-        }
-    }else if(calendarFriday.className === "calendar__friday"){
-        while (calendarFriday.firstChild) {
-            calendarFriday.removeChild(calendarFriday.firstChild);
-            items.splice(calendarFriday.firstChild, 1)
-        }
-    }else if(calendarSaturday.className === "calendar__saturday"){
-        while (calendarSaturday.firstChild) {
-            calendarSaturday.removeChild(calendarSaturday.firstChild);
-            items.splice(calendarSaturday.firstChild, 1)
-        }
-    }else if(calendarSunday.className === "calendar__sunday"){
-        while (calendarSunday.firstChild) {
-            calendarSunday.removeChild(calendarSunday.firstChild);
-            items.splice(calendarSunday.firstChild, 1)
-        }
-    }
-})
 
 function order(a,b) {
     return a.time.replace(':', '.') - b.time.replace(':', '.')    
