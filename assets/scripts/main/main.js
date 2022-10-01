@@ -12,6 +12,9 @@ const calendarFriday = document.querySelector(".calendar__friday")
 const calendarSaturday = document.querySelector(".calendar__saturday")
 const calendarSunday = document.querySelector(".calendar__sunday")
 const deleteAll = document.querySelector(".add__remove")
+const errorContent = document.querySelector(".add__error--content")
+const errorHour = document.querySelector(".add__error--hour")
+const errorHourContent = document.querySelector(".add__error--hourContent")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
 
@@ -20,6 +23,16 @@ calendar.scrollTo(0, 300);
 add.addEventListener("click", () => {
     if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 80){
         addCalendar()
+        content.classList.remove("add__name--error")
+        hour.classList.remove("add__hour--error")
+        errorContent.setAttribute("style", "display: none")
+        errorHour.setAttribute("style", "display: none")
+    } else if(content.value.length < 2){
+        content.classList.add("add__name--error")
+        errorContent.setAttribute("style", "display: flex")
+    }else if(hour.value.length < 2){
+        hour.classList.add("add__hour--error")
+        errorHour.setAttribute("style", "display: flex")
     }
     cleanInput()
 })
@@ -39,6 +52,18 @@ function showItems() {
     calendarSaturday.innerHTML = ''
     calendarSunday.innerHTML = ''
     items.sort(order)
+    var array = []
+    // var veri = true
+    // var i = 0
+    // while (i < items.length){
+    //     array.push(items[i].time)
+    //     i++
+    // }
+    // veri = array.some( e => e === e)
+    // if (veri) {
+
+    // }
+
     items.forEach((item) => {
 
         var div = ""
@@ -49,46 +74,43 @@ function showItems() {
 
         if(item.weekdays === "Segunda-Feira"){
             createDivCalendar(calendarMonday)
-            createDivHour("calendar__hour--monday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--monday")
+            createHour("calendar__hour--monday")
+            createContent("calendar__status--monday")
+            // if(veri === true){
+            //     createContent("calendar__status--monday")    
+            //     createContent("calendar__status--monday")
+            //     array.splice(0, array.length)
+            // } else{
+            //     createContent("calendar__status--monday")
+            // }            
         } else if(item.weekdays === "Terça-Feira"){
             createDivCalendar(calendarTuesday)
-            createDivHour("calendar__hour--Tuesday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--tuesday")
+            createHour("calendar__hour--Tuesday")
+            createContent("calendar__status--tuesday")
         }else if(item.weekdays === "Quarta-Feira"){
             createDivCalendar(calendarThursday)
-            createDivHour("calendar__hour--Thursday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--thursday")
+            createHour("calendar__hour--Thursday")
+            createContent("calendar__status--thursday")
         }else if(item.weekdays === "Quinta-Feira"){
             createDivCalendar(calendarWednesday)
-            createDivHour("calendar__hour--Wednesday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--wednesday")
+            createHour("calendar__hour--Wednesday")
+            createContent("calendar__status--Wednesday")
         }else if(item.weekdays === "Sexta-Feria"){
             createDivCalendar(calendarFriday)
-            createDivHour("calendar__hour--Friday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--friday")
+            createHour("calendar__hour--Friday")
+            createContent("calendar__status--Friday")
         }else if(item.weekdays === "Sabado"){
             createDivCalendar(calendarSaturday)
-            createDivHour("calendar__hour--Saturday")
-            createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--saturday")
+            createHour("calendar__hour--Saturday")
+            createContent("calendar__status--Saturday")
         }else if(item.weekdays === "Domingo"){
             createDivCalendar(calendarSunday)
-            createDivHour("calendar__hour--Sunday")
+            createHour("calendar__hour--Sunday")
+            createContent("calendar__status--Sunday")
+        }
+        function createHour(nameClass){
+            createDivHour(nameClass)
             createH4Time()
-            createDivContent()
-            createDivStatus("calendar__status--sunday")
         }
         function createDivCalendar(mes){
             div = document.createElement("div");
@@ -102,36 +124,47 @@ function showItems() {
             divHour.classList.add(hour)   
             div.appendChild(divHour)
         }
-
         function createH4Time(){
             h4Time = document.createElement("h4")
             h4Time.classList.add("calendar__time")
             divHour.appendChild(h4Time)
-            h4Time.textContent = item.time
+            h4Time.textContent = item.time.replace(":", "h").concat("m")
         }
         function createDivContent(){
             divContent = document.createElement("div")
             divContent.classList.add("calendar__content")
             div.appendChild(divContent)
         }
-
         function createDivStatus(statusName){
             status = document.createElement("div")
             status.classList.add("calendar__status")
             status.classList.add(statusName)
             divContent.appendChild(status)
         }
-
-        var h3Text = document.createElement("h3")
-        h3Text.classList.add("calendar__text")
-        divContent.appendChild(h3Text)
-        h3Text.textContent = item.name   
+        function createContentH3(){
+            var h3Text = document.createElement("h3")
+            h3Text.classList.add("calendar__text")
+            divContent.appendChild(h3Text)
+            h3Text.textContent = item.name
+        }
         
-        var btn = document.createElement("button")
-        btn.classList.add("calendar__remove")
-        divContent.appendChild(btn)
-        btn.innerHTML = "Apagar"
-        btn.setAttribute("onclick", `deleteOne(${items.indexOf(item)})`)
+        function createBtn(){
+            var btn = document.createElement("button")
+            btn.classList.add("calendar__remove")
+            divContent.appendChild(btn)
+            btn.innerHTML = "Apagar"
+            btn.setAttribute("onclick", `deleteOne(${items.indexOf(item)})`)
+        }
+
+        function createContent(nameStatus){
+            createDivContent()
+            createDivStatus(nameStatus)
+            createContentH3()
+            createBtn()
+        }
+
+        
+        
     })
 }
 
@@ -200,7 +233,7 @@ deleteAll.addEventListener("click", () => {
 })
 
 function order(a,b) {
-    return a.time.replace(':', '.') - b.time.replace(':', '.')
+    return a.time.replace(':', '.') - b.time.replace(':', '.')    
 }
 
 showItems()

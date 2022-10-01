@@ -20,6 +20,17 @@ main{
     height: 44px;
 }
 
+.add__input{
+    height: 100%;
+}
+.add__error--content, .add__error--hour,.add__error--hourContent{    
+    color: var(--error);
+    display: none;
+    justify-content: center;
+    
+}
+
+
 .add__name{
     width: 324px;
     height: 100%;
@@ -32,6 +43,14 @@ main{
 .add__name::placeholder{
     color: #3B3E45;
 }
+
+.add__name--error{
+    border: var(--error) 3px solid;
+}
+.add__time{
+    height: 100%;
+}
+
 .add__weekdays{
     height: 100%;
     width: 210px;
@@ -50,6 +69,9 @@ main{
     background-color: var(--white);
     font-family: 'Nunito', sans-serif;
     text-align: center;
+}
+.add__hour--error{
+    border: 3px var(--error) solid;
 }
 
 .plus, .remove{

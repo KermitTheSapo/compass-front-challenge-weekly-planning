@@ -33,7 +33,11 @@
     </header>
     <main>
         <section class="add">
-            <input type="text" placeholder="Atividade" class="add__name" autofocus>
+            <div class="add__input">
+                <input type="text" placeholder="Atividade" class="add__name" autofocus>
+                <p class="add__error--content">Digite o nome da sua atividade!</p>
+                <p class="add__error--hourContent">Digite o nome e horário da sua atividade</p>
+            </div>            
             <select name="weekdays" id="week" class="add__weekdays">
                 <option value="Segunda-Feira" class="add__days">Segunda-Feira</option>
                 <option value="Terça-Feira" class="add__days">Terça-Feira</option>
@@ -42,8 +46,11 @@
                 <option value="Sexta-Feria" class="add__days">Sexta-Feria</option>
                 <option value="Sabado" class="add__days">Sábado</option>
                 <option value="Domingo" class="add__days">Domingo</option>
-            </select>
-            <input type="time" value="12:00" class="add__hour">
+            </select> 
+            <div class="add__time">
+                <input type="time" value="12:00" class="add__hour">
+                <p class="add__error--hour">Digite o horário!</p>
+            </div>            
             <button class="add__btn"><i class="plus">&#43;</i> Adicionar Atividade</button>
             <button class="add__remove"><i class="remove">&#8722;</i> Excluir Todos</button>
         </section>
