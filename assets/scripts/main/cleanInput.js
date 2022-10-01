@@ -1,4 +1,3 @@
-
 function cleanInput() {
     content.value = ""
     week.value = "Segunda-Feira"
