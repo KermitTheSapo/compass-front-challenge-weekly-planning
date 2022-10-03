@@ -18,7 +18,6 @@ const errorHourContent = document.querySelector(".add__error--hourContent")
 const maxContent = document.querySelector(".add__error--maxContent")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
-
 calendar.scrollTo(0, 300);
 
 
@@ -59,6 +58,7 @@ function showItems() {
     calendarSaturday.innerHTML = ''
     calendarSunday.innerHTML = ''
     items.sort(order)
+
     items.forEach((item) => {
 
         var div = ""
@@ -66,11 +66,11 @@ function showItems() {
         var h4Time = ""
         var divContent = ""
         var status = ""
-
+        
         if(item.weekdays === "Segunda-Feira"){
             createDivCalendar(calendarMonday)
             createHour("calendar__hour--monday")
-            createContent("calendar__status--monday")         
+            createContent("calendar__status--monday")            
         } else if(item.weekdays === "Terça-Feira"){
             createDivCalendar(calendarTuesday)
             createHour("calendar__hour--Tuesday")
@@ -166,5 +166,4 @@ function addCalendar(){
 function order(a,b) {
     return a.time.replace(':', '.') - b.time.replace(':', '.')    
 }
-
 showItems()

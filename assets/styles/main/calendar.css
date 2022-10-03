@@ -144,3 +144,22 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
     transform: rotateX(180deg);
     padding-top: 30px;
 }
+
+@media screen and (max-width: 500px) {
+    .calendar{
+        max-width: 310px;
+    }
+    .calendar__remove{
+        left: 220px;
+    }
+    .calendar__content{
+        width: 200px;
+    }
+    .calendar__hour{
+        width: 70px;
+        height: 70px;
+    }
+    .calendar__item{
+        align-items: center;
+    }
+}

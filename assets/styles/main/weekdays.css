@@ -76,3 +76,20 @@
 .Sunday{
     background-color: var(--btn-Sunday);
 }
+
+@media screen and (max-width:500px) {
+    .weekdays__hour{
+        align-self: flex-end;
+        width: 70px;
+        height: 70px;
+    }
+    .weekdays__item{
+        min-width: 150px;
+    }
+    .weekdays__list{
+        overflow: scroll;
+    }
+    .weekdays__days{
+        width: 65%;
+    }
+}
