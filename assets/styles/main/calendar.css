@@ -145,7 +145,67 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
     padding-top: 30px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 2000px){
+    .calendar__hour{
+        width: 100px;
+        height: 100px;
+    }
+    .calendar__content{
+        height: 100px;
+    }
+    .calendar__text{
+        font-size: 1.5rem;        
+    }
+    .calendar__time{
+        font-size: 1.3rem;
+    }
+    .calendar__remove{
+        font-size: 1.5rem;
+        height:40px;
+        width: 100px;
+        left: 500px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .calendar{
+        max-width: 415px;
+    }
+    .calendar__remove{
+        left: 220px;
+    }
+    .calendar__content{
+        width: 200px;
+    }
+    .calendar__hour{
+        width: 70px;
+        height: 70px;
+    }
+    .calendar__item{
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    .calendar{
+        max-width: 365px;
+    }
+    .calendar__remove{
+        left: 220px;
+    }
+    .calendar__content{
+        width: 200px;
+    }
+    .calendar__hour{
+        width: 70px;
+        height: 70px;
+    }
+    .calendar__item{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
     .calendar{
         max-width: 310px;
     }

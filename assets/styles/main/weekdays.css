@@ -77,6 +77,33 @@
     background-color: var(--btn-Sunday);
 }
 
+@media screen and (min-width: 2000px){
+    .weekdays__item{
+        min-width: 300px;
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:1024px) {
+    .weekdays__item{
+        min-width: 100px;
+        font-size: 0.9rem;
+    }
+    .weekdays__days{
+        width: 90%;
+    }
+}
+@media screen and (max-width:768px) {
+    .weekdays__days{
+        width: 90%;
+    }
+    .weekdays__list{
+        overflow: scroll;
+    }
+    .weekdays__item{
+        min-width: 150px;
+    }
+}
+
 @media screen and (max-width:500px) {
     .weekdays__hour{
         align-self: flex-end;
@@ -90,6 +117,6 @@
         overflow: scroll;
     }
     .weekdays__days{
-        width: 65%;
+        width: 76%;
     }
 }

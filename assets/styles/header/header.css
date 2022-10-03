@@ -85,7 +85,35 @@ header{
     font-size: 1.25rem; 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 2000px){
+    .menu{
+        gap: 10px;
+    }
+    .menu__title{
+        font-size: 2rem;
+    }
+    .menu__paragraph{
+        font-size: 1.5rem;
+    }
+    .buttons__remove, .buttons__save{
+        font-size: 1.5rem;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header{
+        gap: 10px;
+    }
+    .timer{
+        padding-right: 0px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px){
     header{
         flex-direction: column;
         justify-content: space-evenly;

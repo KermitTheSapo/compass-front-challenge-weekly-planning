@@ -105,6 +105,43 @@ main{
 .disable{
     display: none;
 }
+@media screen and (min-width: 2000px){
+    .add__input{
+        width: 30%;
+    }
+    .add__name{
+        width: 100%;
+    }
+    .add__name::placeholder{
+        align-items: center;
+        font-size: 1.5rem;
+    }
+    .add{
+        gap:0;
+    }
+    .add__weekdays{
+        width: 20%;
+        font-size: 1.5rem;
+    }
+    .add__time{
+        width: 5%;
+    }
+    .add__hour{
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .add__btn, .add__remove{
+        width: 8%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .add{
+        gap: 10px;
+    }
+    .add__name{
+        width: 100px;
+    }
+}
 
 @media screen and (max-width: 500px) {
     .add{
@@ -113,20 +150,27 @@ main{
         height: 30vh;
         gap: 10px;
     }
+    .add__input{
+        width: 90%;
+    }
     .add__name{
         width: 100%;
         padding-left: 0px;
         height: 5vh;
         text-align: center;
+        width: 100%;
+
     }
     .add__weekdays{
         height: 15vh;
+        width: 90%;
     }
     .add__hour{
         height: 5vh;
     }
     .add__btn{
         height: 5vh;
+        width: 70%;
     }
     .add__remove{
         height: 5vh;
