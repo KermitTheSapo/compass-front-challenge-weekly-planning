@@ -175,4 +175,7 @@ main{
     .add__remove{
         height: 5vh;
     }
+    body{
+        background-size: 90% 30%;
+    }
 }

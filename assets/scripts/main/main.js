@@ -83,19 +83,19 @@ function showItems() {
         }else if(item.weekdays === "Quinta-Feira"){
             createDivCalendar(calendarWednesday)
             createHour("calendar__hour--Wednesday")
-            createContent("calendar__status--Wednesday")
+            createContent("calendar__status--wednesday")
         }else if(item.weekdays === "Sexta-Feria"){
             createDivCalendar(calendarFriday)
             createHour("calendar__hour--Friday")
-            createContent("calendar__status--Friday")
+            createContent("calendar__status--friday")
         }else if(item.weekdays === "Sabado"){
             createDivCalendar(calendarSaturday)
             createHour("calendar__hour--Saturday")
-            createContent("calendar__status--Saturday")
+            createContent("calendar__status--saturday")
         }else if(item.weekdays === "Domingo"){
             createDivCalendar(calendarSunday)
             createHour("calendar__hour--Sunday")
-            createContent("calendar__status--Sunday")
+            createContent("calendar__status--sunday")
         }
         function createHour(nameClass){
             createDivHour(nameClass)
