@@ -16,21 +16,15 @@ const errorContent = document.querySelector(".add__error--content")
 const errorHour = document.querySelector(".add__error--hour")
 const errorHourContent = document.querySelector(".add__error--hourContent")
 const maxContent = document.querySelector(".add__error--maxContent")
-const calendarItem = document.querySelector(".calendar__item")
 const calendarContent = document.querySelector(".calendar__content")
+const calendarMondayAll = document.querySelectorAll(".calendar__monday")
 
 const items = JSON.parse(localStorage.getItem('calendar_itens')) || []
 calendar.scrollTo(0, 300);
 
-
-var array = []
-function hasDuplicates(array) {
-    return (new Set(array)).size !== array.length;
-}
 add.addEventListener("click", (e) => {
+
     e.preventDefault()
-    array.push(hour.value)
-    console.log(hasDuplicates(array))
     if (content.value.length > 2 && hour.value.length > 2 && content.value.length < 150){
         addCalendar()
         content.classList.remove("add__name--error")
@@ -66,38 +60,23 @@ function showItems() {
     calendarSunday.innerHTML = ''
     items.sort(order)
 
-    items.forEach((item) => {
-
+    items.forEach((item, index) => {
         var div = ""
         var divHour = ""
         var h4Time = ""
         var divContent = ""
         var status = ""
-        // var array3 = []
-        if(item.weekdays === "Segunda-Feira"  && !hasDuplicates(array)){      
+        if(item.weekdays === "Segunda-Feira"){
             createDivCalendar(calendarMonday)
             createHour("calendar__hour--monday")
             createContent("calendar__status--monday")
-            // function aa (){
-            //     array3 = [{
-            //         div: createDivCalendar(calendarMonday),
-            //         hora: createHour("calendar__hour--monday"),
-            //         content: createContent("calendar__status--monday")
-            //     }]
-            //     console.log(array3)
-            // }
-        } else if (item.weekdays === "Segunda-Feira" && hasDuplicates(array)){
-            // array3.push("aa")
-            // console.log(array3)
-            // var aa = createContent("calendar__status--monday")
-            // calendarItem.appendChild(calendarContent)            
-            // array = []
-        }        
+        }      
         else if(item.weekdays === "Terça-Feira"){
             createDivCalendar(calendarTuesday)
             createHour("calendar__hour--Tuesday")
             createContent("calendar__status--tuesday")
-        }else if(item.weekdays === "Quarta-Feira"){
+        }
+        else if(item.weekdays === "Quarta-Feira"){
             createDivCalendar(calendarThursday)
             createHour("calendar__hour--Thursday")
             createContent("calendar__status--thursday")
@@ -188,4 +167,5 @@ function addCalendar(){
 function order(a,b) {
     return a.time.replace(':', '.') - b.time.replace(':', '.')    
 }
+
 showItems()
